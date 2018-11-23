@@ -28,8 +28,8 @@ MyGithub.prototype.createRepo = function(options) {
   options = Object.assign(
     {
       name: 'test',
-      description: 'this is a description',
       license_template: 'mit',
+      gitignore_template: 'Node',
       auto_init: true
     },
     options
