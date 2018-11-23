@@ -40,7 +40,7 @@ program
   .command('commit <msg> [otherMsg...]')
   .alias('cm')
   .action((msg, otherMsg) => {
-    console.log(getCommitCommand(`${msg} ${otherMsg.join(' ')}`))
+    // console.log(getCommitCommand(`${msg} ${otherMsg.join(' ')}`))
     // return
     execCommand(getCommitCommand(`${msg} ${otherMsg.join(' ')}`)).then(
       stdout => {
