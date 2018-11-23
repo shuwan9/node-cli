@@ -7,7 +7,7 @@ function getCloneCommand(project, username, pwd) {
   }
 }
 function getCommitCommand(msg) {
-  return `git add .&&git commit -m ${msg}&&git push -u origin master`
+  return `git add .&&git commit -m "${msg}"&&git push -u origin master`
 }
 
 module.exports = {
