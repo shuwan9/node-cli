@@ -5,7 +5,7 @@
   "main": "index.js",
   "bin": {
     "app": "./bin/app.js",
-    "gh": "./bin/gh.js"
+    "github": "./bin/github.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
