@@ -1,20 +1,22 @@
 {
   "name": "node-cli",
   "version": "1.0.0",
-  "description": "this is a description",
+  "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bin": {
+    "app": "./bin/app.js",
+    "gh": "./bin/gh.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://vue5456:sw1260593926@github.com/vue5456/node-cli.git"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test2": "cd bin&&node test.js"
   },
   "keywords": [],
   "author": "react5456",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vue5456/node-cli/issues"
-  },
-  "homepage": "https://github.com/vue5456/node-cli#readme"
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "github-api": "^3.0.0",
+    "iconv-lite": "^0.4.24"
+  }
 }

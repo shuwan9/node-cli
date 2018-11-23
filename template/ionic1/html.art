@@ -1,0 +1,17 @@
+<ion-view
+  view-title=""
+  hide-back-button="true"
+  hide-nav-bar="false"
+  cache-view="false"
+>
+   <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button" ng-click="goSetting()">
+      <i class="icon ion-navicon"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-content has-bouncing="false" class="i-e-{{className}}">
+    <net-error ng-if="netError"></net-error>
+    <div ng-if="!netError" class="content">
+    </div>
+  </ion-content>
+</ion-view>

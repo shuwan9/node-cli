@@ -1,0 +1,11 @@
+function {{routerConfig}}($stateProvider) {
+  'ngInject'
+  $stateProvider.state('{{state}}', {
+    url: '/{{url}}',
+    controller: '{{controller}}',
+    controllerAs: '$ctrl',
+    template: require('./{{htmlPath}}')
+  })
+}
+
+export default {{routerConfig}}

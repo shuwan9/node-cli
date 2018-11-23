@@ -1,0 +1,13 @@
+import './{{scssPath}}'
+
+let {{moduleName}} = angular.module('{{module}}', [])
+
+//router config
+import {{routerConfig}} from './{{configPath}}'
+{{moduleName}}.config({{routerConfig}})
+
+// Controllers
+import {{controller}} from './{{controllerPath}}'
+{{moduleName}}.controller('{{controller}}', {{controller}})
+
+export default {{moduleName}}

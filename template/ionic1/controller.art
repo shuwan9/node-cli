@@ -1,0 +1,53 @@
+class {{controller}} {
+  constructor(
+    $scope,
+    $timeout,
+    $state,
+    localStorageService,
+    Constant,
+    Tip,
+    Help,
+    Http
+  ) {
+   
+    'ngInject'
+
+    const s = $scope
+    const g = {}
+    
+    /**
+     *局部helper
+     */
+
+    /**
+     * 需要绑定到$scope上的函数，统一在下面定义
+     */
+  
+    /**
+     * 统一绑定,init方法里面调用
+     */
+    function bindHandler() {
+     
+    }
+    /**
+     * 初始化数据函数,统一在下面定义
+     */
+
+    /**
+     *统一初始化数据，init方法里面调用
+     */
+    function initData() {
+    }
+
+    /**
+     * 控制器启动
+     */
+    init()
+    function init() {
+      bindHandler()
+      initData()
+    }
+  }
+}
+
+export default {{controller}}
