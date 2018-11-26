@@ -3,6 +3,7 @@
 const fs = require('fs')
 const path = require('path')
 const artTemplate = require('art-template')
+const timestamp = require('time-stamp')
 
 let argv = process.argv[2]
 let argvArr = argv.split('.')
@@ -71,8 +72,12 @@ function getData(argv, argvArr, camel) {
     configPath: getPath(argv, 'config'),
     controllerPath: getPath(argv, 'controller'),
     moduleName: getModuleName(camel),
-    module: getModule(argv)
+    module: getModule(argv),
+    date: getDate()
   }
+}
+function getDate() {
+  return timestamp('YYYY-MM-DD HH:mm:ss')
 }
 function getCamel(argvArr) {
   return argvArr

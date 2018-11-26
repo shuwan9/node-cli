@@ -29,6 +29,7 @@ program
   .action(project => {
     createNewProject(project)
   })
+
 program
   .command('delete <project>')
   .alias('de')

@@ -18,6 +18,7 @@
     "art-template": "^4.13.2",
     "commander": "^2.19.0",
     "github-api": "^3.0.0",
-    "iconv-lite": "^0.4.24"
+    "iconv-lite": "^0.4.24",
+    "time-stamp": "^2.2.0"
   }
 }

@@ -1,10 +1,18 @@
+/**
+ * {{date}} created by shuwang5456
+ */
+
 function {{routerConfig}}($stateProvider) {
   'ngInject'
   $stateProvider.state('{{state}}', {
     url: '/{{url}}',
+    // views: {
+    //   '{{className}}': {
     controller: '{{controller}}',
     controllerAs: '$ctrl',
     template: require('./{{htmlPath}}')
+      // }
+    // }
   })
 }
 

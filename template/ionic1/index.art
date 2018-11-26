@@ -1,3 +1,7 @@
+/**
+ * {{date}} created by shuwang5456
+ */
+
 import './{{scssPath}}'
 
 let {{moduleName}} = angular.module('{{module}}', [])
