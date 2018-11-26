@@ -13,6 +13,8 @@
   -->
   <ion-content has-bouncing="false" class="i-e-{{className}}">
     <net-error ng-if="netError"></net-error>
-    <div ng-if="!netError" class="content"></div>
+    <div ng-if="!netError" class="content">
+      {{className}}
+    </div>
   </ion-content>
 </ion-view>
