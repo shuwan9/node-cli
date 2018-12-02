@@ -1,3 +1,8 @@
+/**
+ * os.homedir()
+ * process.chdir()
+ */
+
 const path = require('path')
 const os = require('os')
 const exec = require('child_process').exec

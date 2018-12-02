@@ -1,3 +1,7 @@
+/**
+ * child_process.exec
+ */
+
 const exec = require('child_process').exec
 const iconv = require('iconv-lite')
 exec(
