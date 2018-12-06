@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-
+const fs = require('fs')
+const path = require('path')
 const program = require('commander')
 const execCommand = require('./lib/exec')
 
@@ -51,6 +52,23 @@ program
     )
   })
 
+program.command('pull').action(() => {
+  fs.readdir('./', (err, files) => {
+    if (err) {
+      console.log('error:', err)
+    } else {
+      execCommand(getPullCommand(files)).then(
+        stdout => {
+          console.log(stdout)
+        },
+        stderr => {
+          console.log(stderr)
+        }
+      )
+    }
+  })
+})
+
 program.parse(process.argv)
 
 function createNewProject(project) {
@@ -70,4 +88,15 @@ function createNewProject(project) {
     .then(stdout => {
       console.log(stdout)
     })
+}
+function getPullCommand(files) {
+  return files
+    .map((file, index) => {
+      if (index < files.length && index > 0) {
+        return `cd..&&cd ${file}&&git pull`
+      } else {
+        return `cd ${file}&&git pull`
+      }
+    })
+    .join('&&')
 }
