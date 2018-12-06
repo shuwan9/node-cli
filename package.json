@@ -5,7 +5,7 @@
   "main": "index.js",
   "bin": {
     "app": "./bin/app.js",
-    "github": "./bin/github.js",
+    "gh": "./bin/gh.js",
     "study": "./bin/study.js"
   },
   "scripts": {

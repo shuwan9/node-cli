@@ -11,7 +11,7 @@ const { getCloneCommand, getCommitCommand } = require('./lib/helper')
 
 const { username, pwd } = require('./lib/config')
 
-program.version('0.0.1')
+program.version(require('../package.json').version)
 
 program.command('clone <project>').action(project => {
   execCommand(getCloneCommand(project, username, pwd)).then(
