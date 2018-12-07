@@ -69,6 +69,23 @@ program.command('pull').action(() => {
   })
 })
 
+program.command('ca').action(() => {
+  fs.readdir('./', (err, files) => {
+    if (err) {
+      console.log('error:', err)
+    } else {
+      execCommand(getCommitAllCommand(files)).then(
+        stdout => {
+          console.log(stdout)
+        },
+        stderr => {
+          console.log(stderr)
+        }
+      )
+    }
+  })
+})
+
 program.parse(process.argv)
 
 function createNewProject(project) {
@@ -94,6 +111,17 @@ function getPullCommand(files) {
     .map((file, index) => {
       if (index < files.length && index > 0) {
         return `cd..&&cd ${file}&&git pull`
+      } else {
+        return `cd ${file}&&git pull`
+      }
+    })
+    .join('&&')
+}
+function getCommitAllCommand(files) {
+  return files
+    .map((file, index) => {
+      if (index < files.length && index > 0) {
+        return `cd..&&cd ${file}&&gh cm "update"`
       } else {
         return `cd ${file}&&git pull`
       }
