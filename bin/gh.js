@@ -110,9 +110,9 @@ function getPullCommand(files) {
   return files
     .map((file, index) => {
       if (index < files.length && index > 0) {
-        return `cd..&&cd ${file}&&git pull`
+        return `cd..&&cd ${file}&&git pull origin master`
       } else {
-        return `cd ${file}&&git pull`
+        return `cd ${file}&&git pull origin master`
       }
     })
     .join('&&')
@@ -123,7 +123,7 @@ function getCommitAllCommand(files) {
       if (index < files.length && index > 0) {
         return `cd..&&cd ${file}&&gh cm "update"`
       } else {
-        return `cd ${file}&&git pull`
+        return `cd ${file}&&gh cm "update"`
       }
     })
     .join('&&')
