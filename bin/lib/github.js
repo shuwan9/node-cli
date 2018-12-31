@@ -34,7 +34,7 @@ MyGithub.prototype.createRepo = function(options) {
     },
     options
   )
-  return this.getUser(options).createRepo(options)
+  return this.getUser().createRepo(options)
 }
 MyGithub.prototype.deleteRepo = function(repo) {
   return this.getRepo(repo).deleteRepo()

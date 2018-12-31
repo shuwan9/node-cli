@@ -89,8 +89,6 @@ program.command('ca').action(() => {
 program.parse(process.argv)
 
 function createNewProject(project) {
-  console.log(project, username, pwd)
-  return
   myGithub
     .createRepo(project)
     .then(stdout => {
