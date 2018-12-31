@@ -3,7 +3,8 @@ function getCloneCommand(project, username, pwd) {
   return `mkdir ${project}&&cd ${project}&&git init&&git remote add origin ${githubUrl}&&git pull origin master`
 
   function getGithubUrlByProject(project) {
-    return `https://${username}:${pwd}@github.com/${username}/${project}.git`
+    // return `https://${username}:${pwd}@github.com/${username}/${project}.git`
+    return `https://github.com/${username}/${project}.git`
   }
 }
 function getCommitCommand(msg) {

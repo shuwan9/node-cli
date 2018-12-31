@@ -89,21 +89,35 @@ program.command('ca').action(() => {
 program.parse(process.argv)
 
 function createNewProject(project) {
+  console.log(project, username, pwd)
+  return
   myGithub
     .createRepo(project)
     .then(stdout => {
       return execCommand(getCloneCommand(project, username, pwd))
     })
+    .catch(err => {
+      console.log('err:', err)
+    })
     .then(stdout => {
       return execCommand(`cd ${project}&&npm init -y`)
+    })
+    .catch(err => {
+      console.log('err:', err)
     })
     .then(stdout => {
       return execCommand(
         `cd ${project}&&git add .&&git commit -m "first commit"&&git push -u origin master`
       )
     })
+    .catch(err => {
+      console.log('err:', err)
+    })
     .then(stdout => {
       console.log(stdout)
+    })
+    .catch(err => {
+      console.log('err:', err)
     })
 }
 function getPullCommand(files) {
