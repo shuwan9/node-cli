@@ -12,7 +12,7 @@
     "test2": "cd bin&&node test.js"
   },
   "keywords": [],
-  "author": "react5456",
+  "author": "shuwang-vue",
   "license": "MIT",
   "dependencies": {
     "art-template": "^4.13.2",
