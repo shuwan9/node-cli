@@ -52,6 +52,30 @@ program
     )
   })
 
+program
+  .command('switch <username>')
+  .alias('sw')
+  .action(username => {
+    const users = require('../config/github.json')
+    const usernames = Object.keys(users)
+    const index = usernames.indexOf(username)
+    if (index > -1) {
+      const email = users[usernames[index]].email
+      execCommand(
+        `git config user.name ${username}&&git config user.email ${email}&&git config --global user.name ${username}&&git config --global user.email ${email}`
+      ).then(
+        stdout => {
+          console.log(stdout)
+        },
+        stderr => {
+          console.log(stderr)
+        }
+      )
+    } else {
+      console.log(`not find ${username}'s email`)
+    }
+  })
+
 program.command('pull').action(() => {
   fs.readdir('./', (err, files) => {
     if (err) {
