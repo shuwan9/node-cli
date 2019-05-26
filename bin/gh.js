@@ -110,6 +110,18 @@ program.command('ca').action(() => {
   })
 })
 
+program.command('get').action(() => {
+  const request = require('request-promise')
+  request
+    .get('https://github-contributions-api.now.sh/v1/shuwang-vue')
+    .then(res => {
+      let total = 0
+      const data = JSON.parse(res)
+      data.years.forEach(year => (total += year.total))
+      console.log(total)
+    })
+})
+
 program.parse(process.argv)
 
 function createNewProject(project) {

@@ -19,6 +19,8 @@
     "commander": "^2.19.0",
     "github-api": "^3.0.0",
     "iconv-lite": "^0.4.24",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
     "time-stamp": "^2.2.0"
   }
 }

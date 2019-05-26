@@ -2,7 +2,7 @@ const Github = require('github-api')
 function MyGithub(options) {
   this.options = Object.assign(
     {},
-    { username: 'vue5456', password: 'sw1260593926' },
+    { username: 'shuwang-vue', password: 'sw1260593926' },
     options || {}
   )
   this.github = this.init(this.options)
@@ -44,6 +44,9 @@ MyGithub.prototype.deleteRepos = function(repos) {
     return this.deleteRepo(repo)
   })
   return Promise.all(promises)
+}
+MyGithub.prototype.getProfile = function() {
+  return this.getUser().getProfile()
 }
 
 module.exports = {
