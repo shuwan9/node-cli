@@ -112,14 +112,14 @@ program.command('ca').action(() => {
 
 program.command('get').action(() => {
   const request = require('request-promise')
-  request
-    .get('https://github-contributions-api.now.sh/v1/shuwang-vue')
-    .then(res => {
-      let total = 0
-      const data = JSON.parse(res)
-      data.years.forEach(year => (total += year.total))
-      console.log(total)
-    })
+  const cheerio = require('cheerio')
+  request.get('https://github.com/shuwang-vue').then(res => {
+    const $ = cheerio.load(res)
+    const text = $('.js-yearly-contributions .f4.text-normal.mb-2')
+      .text()
+      .trim()
+    console.log(text)
+  })
 })
 
 program.parse(process.argv)

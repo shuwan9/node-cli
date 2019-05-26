@@ -16,6 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "art-template": "^4.13.2",
+    "cheerio": "^1.0.0-rc.3",
     "commander": "^2.19.0",
     "github-api": "^3.0.0",
     "iconv-lite": "^0.4.24",
